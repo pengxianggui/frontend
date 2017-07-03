@@ -1,0 +1,254 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100%;
+	height: 100%;
+}
+
+#set{
+	width: 120px;
+	height: 240px;
+	border: 1px solid;
+	position: absolute;
+	padding: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+}
+#set h3{
+	font-size:16px;
+	text-align:center;
+}
+#set span{
+	font-size:14px;
+}
+#set input{
+	width:120px;
+	height: 20px;
+	margin: 5px auto;
+}
+
+/*-----------------------------------*/
+
+#box{
+	font-size: 0.625em;
+	width: 30em;
+	height: 30em;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	left:0;
+	right: 0;
+	margin: auto;
+	border-radius: 50%;
+	border:1px solid #000;
+	box-shadow: 0 0 2px 2px #666, 0 0 2px 2px #999 inset;
+	
+	/*background-color:#ccc;
+	background-image:
+		linear-gradient(
+			to top left,
+			rgba(255,255,255,0.6) 50%,white 50%, white 100%
+		) 
+	*/
+	background-image:
+		radial-gradient(
+			500px at 50% 50%,
+			rgba(0,0,0,.04) 50%,
+			white 50.5%,
+			white 50.5%,
+			rgba(0,0,0,.03) 51%,
+			rgba(0,0,0,.03) 100%);
+}
+#box ul{
+	list-style:none;
+}
+
+li{
+	position: absolute;
+}
+
+#dot {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	left:0;
+	right: 0;
+	margin: auto;
+}
+
+#point {
+	position: absolute;
+	width:100%;
+	height:50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+#num {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#heart{
+	width: 4%;
+	height: 4%;
+	background: white;
+	border-radius: 50%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	box-shadow: 0px 0px 3px 6px rgba(0,0,0,.8) inset;
+	z-index: 2;
+}
+
+#point li {
+	border: 1px solid;
+	border-top-left-radius: 80%;
+	border-top-right-radius: 80%;
+	background: #000;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@keyframes TIME1 {
+	from {
+		transform: none;
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+@keyframes TIME {
+	from {
+		transform: none;
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+#second {
+	width: 0.5%;
+	height: 80%;
+	transform-origin: bottom center;
+	animation: TIME infinite 60s both steps(60);
+}
+#minute {
+	height: 50%;
+	width: 0.6%;
+	transform-origin: bottom center;
+	animation: TIME infinite 3600s -60s;
+}
+#hour{
+	width: 0.8%;
+	height: 40%;
+	transform-origin: bottom center;
+	animation: TIME infinite 86400s;
+}
+
+#num li {
+	width: 10%;
+	height: 10%;
+	left:0px;
+	right:0px;
+	margin:0 auto;
+	line-height:20px;
+	text-align:center;
+	transform-origin:50% 500%;
+	font-size: 1.5em;
+}
+
+#num2{
+	transform:rotate(30deg);
+}
+#num2 span{
+	display:block;
+	transform:rotate(-30deg);
+}
+#num3{
+	transform:rotate(60deg);
+}
+#num3 span{
+	display:block;
+	transform:rotate(-60deg);
+}
+#num4{
+	transform:rotate(90deg);
+}
+#num4 span{
+	display:block;
+	transform:rotate(-90deg);
+}
+#num5{
+	transform:rotate(120deg);
+}
+#num5 span{
+	display:block;
+	transform:rotate(-120deg);
+}
+#num6{
+	transform:rotate(150deg);
+}
+#num6 span{
+	display:block;
+	transform:rotate(-150deg);
+}
+#num7{
+	transform:rotate(180deg);
+}
+#num7 span{
+	display:block;
+	transform:rotate(-180deg);
+}
+#num8{
+	transform:rotate(210deg);
+}
+#num8 span{
+	display:block;
+	transform:rotate(-210deg);
+}
+#num9{
+	transform:rotate(240deg);
+}
+#num9 span{
+	display:block;
+	transform:rotate(-240deg);
+}
+#num10{
+	transform:rotate(270deg);
+}
+#num10 span{
+	display:block;
+	transform:rotate(-270deg);
+}
+#num11{
+	transform:rotate(300deg);
+}
+#num11 span{
+	display:block;
+	transform:rotate(-300deg);
+}
+#num12{
+	transform:rotate(330deg);
+}
+#num12 span{
+	display:block;
+	transform:rotate(-330deg);
+}

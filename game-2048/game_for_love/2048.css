@@ -1,0 +1,124 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+#block {
+	position: absolute;
+	width:100%;
+	height: 100%;
+}
+.top {
+	height: 30%;
+	margin: 0 auto;
+	background-image: url(images/bg1.jpg);
+	background-size: 100% 100%;
+}
+
+.bottom {
+	height: 70%;
+	margin: 0 auto;	
+	background-image: url(images/bg2.jpg);
+	background-size: 100% 100%
+}
+
+/*header的css样式*/
+header {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+header h3 {
+	font-family: Arial;
+	font-size: 90px;
+	font-weight: bold;
+	margin: 0px auto;
+	color: #EA4AC8;
+}
+
+header #newgamebutton {
+	display: block;
+	margin: 10px auto;
+	width: 250px;
+	height: 86px;
+	padding: 10px;
+	background-color: #8f7a66;
+	font-family: Arial;
+	font-size: 46px;
+	color: white;
+	text-decoration: none;
+	line-height: 86px;
+	border-radius: 10px;
+}
+
+header #newgamebutton:hover {
+	background-color: #9f8b77;
+}
+
+p {
+	font-family: Arial;
+	margin: 0px auto;
+}
+
+header p:nth-of-type(1) {
+	font-size: 60px;
+	color: #FFFFFF;
+	background: rgba(0,0,0,.3);
+}
+header p:nth-of-type(2) {
+	position: absolute;
+	width: 100%;
+	bottom:20px;
+	font-size: 28px;
+	color: #FFFFFF;
+	background: rgba(0,0,0,.3);
+}
+header p:nth-of-type(3) {
+	font-size: 30px;
+	color: #FFFFFF;
+	background: rgba(0,0,0,.3);
+}
+
+header p:nth-of-type(3) input {
+	width: 50%;
+	height: 30px;
+}
+
+#aimgrade {
+	color: red;
+}
+
+/*棋盘的css样式*/
+#grid-container {
+	position: relative;
+	width: 460px;
+	height: 460px;
+	padding: 20px;
+	background-color: #bbada0;
+	border-radius: 10px;
+	margin: 0px auto;
+	transform: scale(1.5) translateY(30%);
+}
+
+.gird-cell {
+	width: 100px;
+	height: 100px;
+	border-radius: 6px;
+	background-color: #ccc0b3;
+	position: absolute;/*每个各自的具体定位由js控制*/
+}
+
+/*对number-cell进行样式预定义*/
+.number-cell {
+	position: absolute;
+
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 100px;
+	text-align: center;
+
+	border-radius: 6px;
+}

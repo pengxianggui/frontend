@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<title>作业1</title>
+<meta charset="utf-8"/>
+
+<style>
+	html, body {
+		font-family: "microsoft YaHei";
+		height: 100%;
+	}
+	
+	body {
+		display: flex;
+	}
+	
+	* {
+		margin:0px;
+		padding:0px;
+	}
+
+	#table {
+		align-self: center;
+		margin: 0 auto;
+		border: 1px solid #e1e1e1;
+		width: 900px;
+	}
+	ul{
+		overflow: auto;
+		list-style: none;
+		display: flex;/*将父级元素的display属性设置为flex（它将同时兼具block的性质），子元素li可以伸缩无缝沾满width
+		而且按比例分配非常方便。如：
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		如果设置ul元素的display属性值为flex，然后分别设置li的flex属性值为2、1、1、1，则四个li将会按2：1：1：1的比例
+		无缝动态平分ul的width。非常实用。
+		*/
+	}
+	
+	ul li{
+		flex: 1;
+		box-sizing: border-box;/*此处将box-sizing的属性值为border-box，就是将li的width包括了它自己的border，
+		即，如果width为10px,border为1px，则实际的width为9px，所以width+border还是10px。这里的flex相当于设置width*/
+		float:left;
+		padding: 4px 0;
+		text-align:center;
+		border:1px solid #e1e1e1;
+		font-size:14px;
+		position: relative;
+	}
+	ul:not(:first-child) li:nth-child(5)::before {
+		content:"￥ ";
+		color: red;
+	}
+	ul li::after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
+	ul:nth-of-type(odd){
+		background:#f5f5f5;
+	}
+	ul:nth-of-type(even){
+		background: #f9f9f9;
+	}
+	ul:first-child{
+		background: #d9edf7;
+		color: #3a87bd;
+	}
+	ul li:hover{
+		background:#0F6;
+	}
+	span{
+		color:#b9870a;
+		font-weight:bold;
+	}
+</style>
+</head>
+<body>
+<div id="table">
+    <ul class="row">
+    	<li>订单号</li>
+        <li>区域</li>
+        <li>经销商用户</li>
+        <li>销售代表</li>
+        <li>订单总价</li>
+        <li>送货方式</li>
+        <li>需求到货日期</li>
+        <li>订单状态</li>
+        <li>提交日期</li>
+    </ul>
+    <!--可以是用js循环追加ul以及其中的内容，在文档加载时执行-->
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+     <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+     <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+     <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>40,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+    <ul class="row">
+    	<li>P150713008</li>
+        <li>ZZ</li>
+        <li>张平</li>
+        <li>王宁</li>
+        <li>50,000.00</li>
+        <li>送货上门</li>
+        <li>2015-07-13</li>
+        <li>已提交</li>
+        <li>2015-07-13</li>
+    </ul>
+</div>
+</body>
+</html>

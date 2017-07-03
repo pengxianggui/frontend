@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+#nav {
+  position: relative;
+  display: flex;
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 0 #b84e44; }
+  #nav > li {
+    position: relative;
+    flex: 1;
+    background: #f65f57;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: background 0.5s; }
+    #nav > li > a {
+      display: inline-block;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5); }
+    #nav > li > a:hover {
+      color: #fff;
+      transform: scale(1.2) rotate(12deg);
+      transition: transform 0.5s; }
+    #nav > li > ul {
+      opacity: 0;
+      visibility: hidden;
+      background: #f65f57;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.5s, opacity 0.5s, visibility 0s 0.5s;
+      border-left: 2px solid #b84e44;
+      border-right: 2px solid #b84e44;
+      border-bottom: 2px solid #b84e44;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+    #nav > li > ul > li:hover {
+      background: #b84e44;
+      color: #fff; }
+    #nav > li::after {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      content: "";
+      width: 1px;
+      height: 80%;
+      background-image: linear-gradient(to bottom, #ccc, #000 50%, #ccc);
+      z-index: 1; }
+    #nav > li:first-child::after {
+      display: none; }
+    #nav > li:hover {
+      background: #b84e44; }
+      #nav > li:hover + li::after {
+        display: none; }
+      #nav > li:hover::after {
+        display: none; }
+      #nav > li:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        transition: height 0.5s, opacity 0.5s, visibility 0s; }
+      #nav > li:hover > ul[data-length='1'] {
+        height: 40px; }
+      #nav > li:hover > ul[data-length='2'] {
+        height: 80px; }
+      #nav > li:hover > ul[data-length='3'] {
+        height: 120px; }
+      #nav > li:hover > ul[data-length='4'] {
+        height: 160px; }
+
+a {
+  cursor: pointer;
+  font-size: 15px; }
+
+/*# sourceMappingURL=daohang.css.map */

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>代码雨</title>
+</head>
+
+<canvas id="canvas" height="600" width="800" style="background:#000"></canvas>
+<script>
+	/*画一串字符，
+		ctx: 画笔,
+		firstchar: 该列第一个字符初始位置,
+		y: 表示该列的横向偏移量,
+		num: 表示该列一共有几个字母
+	*/
+	
+	function drawChar(ctx, firstchar, y, num, charArr) {
+		var i;
+		for (i = 0; i < num; i++) {
+			ctx.font="20px Georgia";
+			if (i == 0) {
+				ctx.fillStyle = "#fff";
+			} else {	
+				ctx.fillStyle = "rgba(0, 255, 0 , " + (1 - i / num) + ")";
+			}
+			ctx.fillText(charArr[i], y, firstchar - i * 20);//在这里采用随机生成字符的方式会不停闪动,如果不要闪动,只能在column数组中将字符确定？
+		}
+	}
+	
+	function getRandom(min, max) { //随机返回min和max之间的一个整数
+		return parseInt( min + Math.random() * (max - min) );
+	}
+	
+	function getRandChar() {
+		return Math.random() > 0.5 ? 1 : 0;//随机返回1 或者 0
+	}
+	
+	(function() {
+		var j, k;
+		var interval = 30;//两列之间的间隔
+		var columnNum = 30;//列的个数
+		var columns = [];//数组,记录每列的三个参数：第一个字符初始位置firstPosi 和 横轴偏移量y 以及这个列有n个数字
+		for (j = 0; j < columnNum; j++) {
+			columns.push( [getRandom(-1000, 0), j * interval + 10, getRandom(15, 30), []] );
+			for(k = 0; k < columns[j][2]; k++) {
+				columns[j][3].push(getRandChar());
+			}
+		}
+		var canvas = document.getElementById("canvas");
+		var canvasW = canvas.width;
+		var canvasH = canvas.height;
+        var ctx = canvas.getContext("2d");
+		ctx.shadowBlur = 8;
+		ctx.shadowColor = "#0f0";
+		setInterval(paint, 50);
+				
+		function paint() {
+			var index;
+			var arr;
+            ctx.clearRect(0, 0, canvasW, canvasH);//清除canvas上的所有东西
+			for (index = 0; index < columns.length; index++) {
+				arr = columns[index];
+				ctx.save();
+				ctx.scale((index) * 3/ columns.length + 1, (index) * 3 / columns.length + 1);
+				drawChar(ctx, arr[0], arr[1], arr[2], arr[3]);
+				ctx.restore();
+				arr[0] = arr[0] > (canvasH + arr[2] * 20) ? 0 : (arr[0] + 5);
+			}
+		}
+		
+	})();
+</script>
+</body>
+</html>

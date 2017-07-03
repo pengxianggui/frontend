@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片轮播</title>
+	<style type="text/css">
+		#parent {
+			position: relative;
+			width: 1000px;
+			height: 400px;
+			margin: 20px auto 0 auto;
+			overflow: hidden;
+		}
+
+		#parent .son {
+			position: absolute;
+			width: 1000px;
+			height: 400px;
+			background-size: 100%;
+			transition: left 2s ease;
+		}
+
+		#parent #son1 {
+			background-image: url(images/1.jpg);
+			left: 0px;
+		}
+
+		#parent #son2 {
+			background-image: url(images/2.jpg);
+			left: 100%;
+		}
+
+		#parent #son3 {
+			background-image: url(images/3.jpg);
+			left: 200%;
+		}
+
+		#parent #son4 {
+			background-image: url(images/4.jpg);
+			left: 300%;
+		}
+
+		#parent #son5 {
+			background-image: url(images/5.jpg);
+			left: 400%;
+		}
+
+		#controlblock {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			margin-top: 350px;
+			float: left;
+			bottom: 0;
+			background-color:rgba(0, 0, 0, .3);
+			z-index:2;
+		}
+		
+		.control {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			bottom: 15px;
+			background-color: rgba(225, 255, 255, .3);
+			z-index: 3;
+			cursor: pointer;
+
+			text-align: center;
+			line-height: 20px;
+			font-family: Arial;
+		}
+
+		#control1 {
+			right: 150px;
+			background-color: rgba(0, 255, 0, .3);
+		}
+
+		#control2 {
+			right: 120px;
+		}
+
+		#control3 {
+			right: 90px;
+		}
+
+		#control4 {
+			right: 60px;
+		}
+
+		#control5 {
+			right: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div id="controlblock">
+			<div class="control" id="control1">1</div>
+			<div class="control" id="control2">2</div>
+			<div class="control" id="control3">3</div>
+			<div class="control" id="control4">4</div>
+			<div class="control" id="control5">5</div>
+		</div>
+		<div class="son" id="son1"></div>
+		<div class="son" id="son2"></div>
+		<div class="son" id="son3"></div>
+		<div class="son" id="son4"></div>
+		<div class="son" id="son5"></div>
+	</div>
+	<script type="text/javascript">
+		(function() {
+			var i, ishover;
+			i = 0;
+			ishover = false;
+			var controlDiv = Array.prototype.slice.call(document.getElementsByClassName("control"));
+			document.getElementById("parent").addEventListener("mouseover", function(){ishover = true});
+			document.getElementById("parent").addEventListener("mouseout", function(){ishover = false});
+
+			setInterval(moveAuto, 5000);
+
+			/*将mouseover改为click则变成点击切换图片*/
+			controlDiv[0].addEventListener("mouseover",function(){moveByHover(0,controlDiv)});
+			controlDiv[1].addEventListener("mouseover",function(){moveByHover(1,controlDiv)});
+			controlDiv[2].addEventListener("mouseover",function(){moveByHover(2,controlDiv)});
+			controlDiv[3].addEventListener("mouseover",function(){moveByHover(3,controlDiv)});
+			controlDiv[4].addEventListener("mouseover",function(){moveByHover(4,controlDiv)});
+		
+			function moveAuto() {
+				if (!ishover) {
+					moveByHover(getIndex(), controlDiv);
+				}
+			}
+
+			function moveByHover(index,controlDiv) {
+				var j, imagesDiv;
+				imagesDiv = Array.prototype.slice.call(document.getElementsByClassName("son"));
+				for (j = 0; j < imagesDiv.length; j++) {
+					imagesDiv[j].style.left = (j - index) * 1000 + "px";
+					controlDiv[j].style.background = "rgba(225, 255, 255, .3)";
+				}
+				controlDiv[index].style.background = "rgba(0, 255, 0, .3)";
+				i = index;
+			}
+
+			function getIndex() {
+				if (i < 4) {
+					i++;
+					return i;
+				}
+				i = 0;
+				return i;
+			}
+
+		})();
+
+
+	</script>
+</body>
+</html>

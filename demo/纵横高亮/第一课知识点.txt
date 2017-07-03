@@ -1,0 +1,19 @@
+导师：李通洲
+
+第一课收获的知识点：
+1.标签html内比较常用的属性有：lang="zh"	表示使用中文写的
+2.html页面前面的<!doctype html>必不可少！表示此页面为html解析
+3.css选择器的重要性，和选择器种类的繁多：
+	1.div+div	存在并列的div，则选择第一个div后面的所有并列div；如果是div+div+div：则跳过前两个div，从第三个开始选择
+	2.a[target=_blank]	属性选择器,选择target属性值为_blank的所有a标签
+	3.a[src$=".pdf"]	选择其 src 属性以 ".pdf" 结尾的所有 <a> 元素
+	4.a[src^="https"]	选择其 src 属性值以 "https" 开头的每个 <a> 元素。
+	5.a[src*="abc"]		选择其 src 属性中包含 "abc" 子串的每个 <a> 元素。
+	6.p:first-of-type	选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
+	7.p:last-of-type	选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
+	8.p:only-child		选择属于其父元素的唯一子元素的每个 <p> 元素。也就是说p是独生子。巧用：加载的时候，只显示一个li表示提示，当加载的数据显示的时候，就不属于这种情况
+	9.p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。p不是独生子，而且p是老二。这里也可以用n来选择，以满足一定条件
+	10.p:nth-last-child(2)	和上面这个差不多，不过是从最后那个开始数；
+	11.p:last-child		p可以是独生子，也可以不是，但是p一定是最小的。
+	12.:root		一般认为就是html元素
+	13.一些伪类选择器	hover、visited、active、focus

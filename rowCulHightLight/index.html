@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>横纵高亮</title>
+	<style type="text/css">
+		#test {
+			overflow: hidden;
+		}
+		#test caption {
+			background-color: white;
+		}
+		#test tr:hover {
+			background-color: #F6F2AA;
+		}
+		td {
+			position: relative;
+		}
+		td:hover::after {
+			content:"";
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			top: -500px;
+			bottom: -500px;
+			background-color: #F6F2AA;
+		}
+	</style>
+</head>
+<body>
+	<table id="test" border="1" cellspacing="0">
+		<caption>实现表格的横纵高亮</caption>
+		<thead>
+			<tr>
+				<th>订单号</th>
+				<th>区域</th>
+				<th>经销商用户</th>
+				<th>销售代表</th>
+				<th>订单总价</th>
+				<th>订单状态</th>
+				<th>提交日期</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>P150713008</td>
+				<td>ZZ</td>
+				<td>张平</td>
+				<td>王宁</td>
+				<td>40,000.00</td>
+				<td>已提交</td>
+				<td>2015-07-13</td>
+			</tr>
+			<tr>
+				<td>P150713008</td>
+				<td>ZZ</td>
+				<td>张平</td>
+				<td>王宁</td>
+				<td>40,000.00</td>
+				<td>已提交</td>
+				<td>2015-07-13</td>
+			</tr>
+			<tr>
+				<td>P150713008</td>
+				<td>ZZ</td>
+				<td>张平</td>
+				<td>王宁</td>
+				<td>40,000.00</td>
+				<td>已提交</td>
+				<td>2015-07-13</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		// window.onload = function() {
+		// 	"use strict";
+
+		// 	var arrTh = Array.prototype.slice.call(document.getElementsByTagName("th"));
+		// 	var arrTd = Array.prototype.slice.call(document.getElementsByTagName("td"));
+		// 	var arr = arrTh.concat(arrTd);
+
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		(function(i){
+		// 			arr[i].addEventListener("mouseover", function(){hover(this)});
+		// 			arr[i].addEventListener("mouseout", function(){unhover(this)});
+		// 		})(i);
+		// 	};
+
+
+		// 	function hover(eleTd) {
+		// 		var index = arr.indexOf(eleTd);
+		// 		for (var i = 0; i < arr.length; i++) {
+		// 			if ((i - index) % 7 === 0) {
+		// 				arr[i].style.background = "#F6F2AA";
+		// 			}
+		// 		};
+		// 	}
+
+		// 	function unhover(eleTd) {
+		// 		var index = arr.indexOf(eleTd);
+		// 		for (var i = 0; i < arr.length; i++) {
+		// 			if ((i - index) % 7 === 0) {
+		// 				arr[i].style.background = null;
+		// 			}
+		// 		};
+		// 	}
+		// }
+	</script>
+</body>
+</html>

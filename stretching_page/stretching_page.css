@@ -1,0 +1,37 @@
+@charset "UTF-8";
+#parent {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  margin: 20px auto auto auto;
+  border: 1px solid #9A9696;
+  overflow: hidden;
+  /* 完全无需加载使用伪元素，可以直接为son添加box-shadow即可
+  & > .son:not(:first-child)::before {
+  	content: "";
+  	display: block;
+  	width: 1px;
+  	height: 100%;
+  	background-color: rgba(0, 0, 0, .3);
+  	box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, .3);
+  }*/ }
+  #parent > .son {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-size: 100% 100%;
+    transition: left 1s ease; }
+  #parent > .son:not(:first-child) {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.6); }
+  #parent > #son1 {
+    background-image: url(images/stretching1.jpg); }
+  #parent > #son2 {
+    background-image: url(images/stretching2.jpg); }
+  #parent > #son3 {
+    background-image: url(images/stretching3.jpg); }
+  #parent > #son4 {
+    background-image: url(images/stretching4.jpg); }
+  #parent > #son5 {
+    background-image: url(images/stretching5.jpg); }
+
+/*# sourceMappingURL=stretching_page.css.map */

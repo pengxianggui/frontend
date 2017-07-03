@@ -1,0 +1,40 @@
+@charset "utf-8";
+$parentWidth : 600px;
+$parentHeight: 200px;
+$sonWidth : $parentWidth / 2;
+#parent {
+	position: relative;
+	width: $parentWidth;
+	height: $parentHeight;
+	margin: 20px auto auto auto;
+	border: 1px solid #9A9696;
+	overflow: hidden;
+
+	& > .son {
+		position: absolute;
+		width: $sonWidth;
+		height: 100%;
+		background-size: 100% 100%;
+		transition: left 1s ease;
+	}
+
+	/* 完全无需加载使用伪元素，可以直接为son添加box-shadow即可
+	& > .son:not(:first-child)::before {
+		content: "";
+		display: block;
+		width: 1px;
+		height: 100%;
+		background-color: rgba(0, 0, 0, .3);
+		box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, .3);
+	}*/
+	& > .son:not(:first-child) {
+		box-shadow: 0 0 20px 5px rgba(0, 0, 0, .6);
+	}
+
+	@for $i from 0 through 4 {
+		& > #son#{$i + 1} {
+			background-image: url(images/stretching#{$i + 1}.jpg);
+		}
+	}
+
+}

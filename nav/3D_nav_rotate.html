@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3D_nav_rotate</title>
+</head>
+
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+		font-size: 20px;
+		width: 150px;
+		height: 50px;
+		color: white;
+		background: #94C0BE;
+		line-height: 50px;
+		text-align: center;
+	}
+	#block {
+		position: relative;
+		width: 100%;
+		height: 50px;
+	}
+	#nav {
+		width: 905px;
+		height: 50px;
+		margin: 10px auto;
+		list-style: none;
+	}
+	#nav>li, .nav_2>li {
+		perspective: 400px;
+		-webkit-perspective: 250px;
+		perspective-origin: 50% 50%;/*定义视点，在li中定义的视点，自然3D变换效果应用该视点的观察效果*/
+		-webkit-perspective-origin: 50% 50%;
+	}
+	#nav>li>div, .nav_2>li>div {
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		transform-origin: center center -25px;
+		-webkit-transform-origin: center center -25px;
+		-webkit-transform: rotateX(0deg);
+		transition: transform 0.5s;
+	}
+	#nav>li>div:hover, .nav_2>li>div:hover {
+		transform: rotateX(90deg);
+	}
+	#nav>li>div:hover a, .nav_2>li>div:hover a{
+		background-image: repeating-linear-gradient(45deg, #478480 0%, #94C0BE 1%, #94C0BE 1%, #478480 2%);
+	}
+	#nav>li:hover .nav_2{
+		opacity: 1;
+		visibility: visible;
+		transition: height .5s, opacity .5s, visibility 0s;
+	}
+	#nav>li {
+		border-right: 1px solid white;
+		float: left;
+	}
+	#nav>li:last-child {
+		border: none;
+	}
+	#nav>li>div>a:nth-child(1), .nav_2>li>div>a:nth-child(1) {
+		position: absolute;
+	}
+	#nav>li>div>a:nth-child(2), .nav_2>li>div>a:nth-child(2) {
+		transform: translateZ(-25px) rotateX(-90deg) translateZ(25px);
+		-transform: translateZ(-25px) rotateX(-90deg) translateZ(25px);
+	}
+
+	.nav_2 {
+		list-style: none;
+		opacity: 0;
+		visibility: hidden;
+		height: 0;
+		transition: height .5s, opacity .5s, visibility 0s .5s;
+	}
+</style>
+
+<body>
+	<div id="block">
+		<ul id="nav">
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+				<ul class="nav_2">
+					<li>
+						<div>
+							<a href="#">二级标题</a>
+							<a href="#">二级标题</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">二级标题</a>
+							<a href="#">二级标题</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">二级标题</a>
+							<a href="#">二级标题</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+				<ul class="nav_2">
+					<li>
+						<div>
+							<a href="#">二级标题</a>
+							<a href="#">二级标题</a>
+						</div>
+					</li>
+					<li>
+						<div>
+							<a href="#">二级标题</a>
+							<a href="#">二级标题</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="#">一级标题</a>
+					<a href="#">一级标题</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

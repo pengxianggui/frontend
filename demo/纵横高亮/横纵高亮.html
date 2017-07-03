@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <style>
+    table {
+	  table-layout: fixed;
+	  border-collapse: collapse;
+	  text-align: center;
+	  overflow: hidden;
+	}
+	tr:hover {
+	  background: rgba(0,0,0,.2);
+	}
+	td {
+	  position: relative;
+	  padding: 20px;
+	}
+	td:hover::after {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  left: 0;
+	  right: 0;
+	  height: 1000px;
+	  top: -500px;
+	  background: rgba(0,0,0,.2);
+	}
+  </style>
+</head>
+<body>
+<table border=1>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+	</tr>
+</table>
+</body>
+</html>

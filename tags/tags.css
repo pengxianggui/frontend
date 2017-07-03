@@ -1,0 +1,47 @@
+#block {
+	width: 400px;
+	height: 300px;
+	margin: 0px;
+}
+
+#block>a:not(:first-child) {
+	margin-left: -10px;
+}
+.taghead {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	text-decoration: none;
+	line-height: 30px;
+	text-align: center;
+	margin: 0px;
+	background-color: #DCBC98;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 30px;
+	cursor: pointer;
+}
+
+.tagbody {
+	position: absolute;
+	width: 380px;
+	height: 250px;
+	padding: 10px;
+	background-color: #FCF6F6;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .3);
+}
+
+.hide {
+	display: none;
+}
+
+a.active {
+	box-shadow: 0px -3px 6px 0px rgba(0, 0, 0, .5);
+	z-index: 3;
+}
+div.active {
+	z-index: 2;
+}
